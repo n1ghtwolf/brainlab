@@ -53,7 +53,9 @@ class AdminController extends Controller
             'status'   => $validated['status'],
         ]);
 
-        return redirect()->route('admins.index')->with('success', 'Администратор успешно добавлен!');
+        return redirect()
+            ->route('admins.index')
+            ->with('success', 'Администратор успешно добавлен!');
     }
 
     /**
@@ -78,7 +80,9 @@ class AdminController extends Controller
             'status'   => $validated['status'],
         ]);
 
-        return redirect()->route('admins.index')->with('success', 'Администратор успешно обновлен!');
+        return redirect()
+            ->route('admins.index')
+            ->with('success', 'Администратор успешно обновлен!');
     }
 
     /**
@@ -88,6 +92,8 @@ class AdminController extends Controller
     {
         $admin->delete();
 
-        return redirect()->route('admins.index')->with('success', 'Администратор успешно удален!');
+        return redirect()
+            ->route('admins.index')
+            ->with('success', 'Администратор успешно удален!');
     }
 }
