@@ -307,7 +307,7 @@ return [
         ],
         [
             'text' => 'Администраторы',
-            'url'  => '/admin/users',
+            'url'  => '/admin/admins',
             'icon' => 'fas fa-users',
         ],
     ],
