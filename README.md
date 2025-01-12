@@ -1,66 +1,150 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Backend Developer Test Task (Laravel)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
 
-## About Laravel
+This task is designed for the position of a Back-End Developer with Laravel knowledge. The goal is to create an admin
+panel for managing administrators with specific functionality for login, admin management, and avatar handling. The
+project must be hosted on a server for review.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Hosting
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+You are required to host the project on your server for evaluation. If you are unable to do so, we will provide a test
+server.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Important**: No pre-built admin panels are allowed.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Task Requirements
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 1. **Admin Panel - Authorization**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Create the admin part of the website with an authentication system.
 
-## Laravel Sponsors
+- **Login fields**:
+    - **Email**: Must be in the correct format.
+    - **Password**: Must have a minimum length (define the minimum length, e.g., 6 characters).
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  Validation must be implemented for both fields.
 
-### Premium Partners
+### 2. **Admin Panel - Administrators**
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Develop a section called **"Administrators"** in the admin panel.
 
-## Contributing
+#### **Section Structure**:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **General Overview**:
+    - Display a list of all admins in a table.
+    - Columns: **Email**, **Name**, **Status** (active or inactive).
+    - **Actions**:
+        - Add new admin.
+        - Edit an existing admin.
+        - Delete an admin.
 
-## Code of Conduct
+- **Filters**:
+    - Filter by **active/inactive** status.
+    - Search by **email** or **name**.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### **Creating a New Admin**:
 
-## Security Vulnerabilities
+Create a page with the following fields for adding a new admin:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Name**:
+    - Validation: Must not be empty and contain at least 4 characters.
 
-## License
+- **Email**:
+    - Validation: Must be in a valid email format and the email must not already exist in the database.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Password**:
+    - Validation: Must not be empty and contain at least 4 characters.
+
+- **Status**:
+    - A dropdown with the options: **Active** or **Inactive**.
+
+All fields must be mandatory for submission.
+
+#### **Editing an Admin**:
+
+Create a page with editable fields for modifying an existing admin:
+
+- **Name**: Same validation as creating a new admin.
+- **Email**: Same validation as creating a new admin but check that the new email doesn’t already exist.
+- **Password**: Same validation as creating a new admin.
+- **Status**: A dropdown to select **Active** or **Inactive**.
+
+All fields are mandatory for editing.
+
+#### **No Role System**:
+
+- There is no role-based system. Every user created will have admin rights.
+- All users must be able to log into the admin panel with their credentials.
+
+### 3. **Admin Panel - Admins and Avatar**
+
+#### **Avatar Handling**:
+
+- Add an **Avatar** field when creating or editing an admin.
+- The Avatar should be uploaded using a file manager (not a basic input field).
+- Users should upload the image to the server first, then choose the image from the list of uploaded files.
+
+---
+
+## Installation and Setup
+To check project remotely use address:
+
+```brainlab.warcraft-auction.online```
+
+To run the project locally, follow these steps:
+
+1. **Navigate to the project directory**:
+   ```bash
+   cd <your_directory>
+   ```
+2. **Clone the repository in project**:
+   ```bash
+   git clone https://github.com/n1ghtwolf/brainlab
+   ```
+
+3. **Install dependencies**:
+   ```bash
+   composer install
+   ```
+
+4. **Set up the environment**:
+   Copy `.env.example` to `.env` and adjust the settings:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. **Generate application key**:
+   ```bash
+   php artisan key:generate
+   ```
+
+6. **Set up the database**:
+   Make sure your database credentials are set in `.env`.
+
+7. **Run the migrations**:
+   ```bash
+   php artisan migrate
+   ```
+   
+8. **Run the seeders** :
+   ```bash
+   php artisan db:seed
+   ```
+
+9. **Start the development server**:
+   ```bash
+   php artisan serve
+   ```
+
+10. Open the application in your browser at `http://localhost:8000`.
+
+---
+
+## Conclusion
+
+The task includes creating a fully functional admin panel with an authentication system, admin management features, and
+avatar handling. All fields must be validated, and the application must be easy to use for both creating and editing
+admin users. Make sure to host the application so it can be reviewed as part of your submission.
