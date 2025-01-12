@@ -23,14 +23,15 @@ class UpdateUserRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'     => 'required|string|min:4',
-            'email'    => [
+            'name'        => 'required|string|min:4',
+            'email'       => [
                 'required',
                 'email',
                 Rule::unique('users', 'email')->ignore($this->admin)
             ],
-            'password' => 'nullable|string|min:4',
-            'status'   => 'string|in:active,inactive',
+            'password'    => 'nullable|string|min:4',
+            'status'      => 'string|in:active,inactive',
+            'avatar_path' => 'nullable|string',
         ];
     }
 }

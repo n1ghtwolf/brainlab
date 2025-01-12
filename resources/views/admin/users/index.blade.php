@@ -23,7 +23,6 @@
         <button type="submit" class="btn btn-primary">Фильтровать</button>
         <a href="{{ route('admins.index') }}" class="btn btn-secondary ml-2">Сбросить</a>
     </form>
-
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -42,14 +41,18 @@
                     <div style="display: flex"><a href="{{ route('admins.edit', $admin->id) }}"
                                                   style="margin-left: 5px;margin-right: 5px"
                                                   class="btn btn-sm btn-warning">Редактировать</a>
-                        <form action="{{ route('admins.destroy', $admin->id) }}" method="POST"
-                              onsubmit="return confirm('Вы уверены, что хотите удалить администратора?');">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" style="margin-left: 5px;margin-right: 5px"
-                                    class="btn btn-sm btn-danger">Удалить
+                        @if (auth()->user()->id !== $admin->id)
+                            <form action="{{ route('admins.destroy', $admin->id) }}" method="POST"
+                                  onsubmit="return confirm('Вы уверены, что хотите удалить администратора?');"> @csrf @method('DELETE')
+                                <button type="submit" style="margin-left: 5px;margin-right: 5px"
+                                        class="btn btn-sm btn-danger">Удалить
+                                </button>
+                            </form>
+                        @else
+                            <button style="margin-left: 5px;margin-right: 5px" class="btn btn-sm btn-secondary"
+                                    disabled>Удалить
                             </button>
-                        </form>
+                        @endif
                     </div>
                 </td>
 

@@ -49,7 +49,7 @@
                <i class="fa fa-picture-o"></i> Choose
              </a>
            </span>
-            <input id="thumbnail" class="form-control" type="text" name="filepath">
+            <input id="thumbnail" class="form-control" type="text" name="avatar_path">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
         <button type="submit" class="btn btn-success">Создать</button>
@@ -60,6 +60,5 @@
 @section('js')
     <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
     <script>
-        var route_prefix = "laravel-filemanager";
-        $('#lfm').filemanager('image', {prefix: route_prefix});    </script>
+        $('#lfm').filemanager('image');    </script>
 @endsection

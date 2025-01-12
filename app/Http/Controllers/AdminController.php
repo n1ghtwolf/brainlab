@@ -47,10 +47,11 @@ class AdminController extends Controller
         $validated = $request->validated();
 
         User::create([
-            'name'     => $validated['name'],
-            'email'    => $validated['email'],
-            'password' => bcrypt($validated['password']),
-            'status'   => $validated['status'],
+            'name'        => $validated['name'],
+            'email'       => $validated['email'],
+            'password'    => bcrypt($validated['password']),
+            'status'      => $validated['status'],
+            'avatar_path' => $validated['avatar_path'],
         ]);
 
         return redirect()
@@ -74,10 +75,11 @@ class AdminController extends Controller
         $validated = $request->validated();
 
         $admin->update([
-            'name'     => $validated['name'],
-            'email'    => $validated['email'],
-            'password' => $validated['password'] ? bcrypt($validated['password']) : $admin->password,
-            'status'   => $validated['status'],
+            'name'        => $validated['name'],
+            'email'       => $validated['email'],
+            'password'    => $validated['password'] ? bcrypt($validated['password']) : $admin->password,
+            'status'      => $validated['status'],
+            'avatar_path' => $validated['avatar_path'],
         ]);
 
         return redirect()
@@ -90,6 +92,13 @@ class AdminController extends Controller
      */
     public function destroy(User $admin): RedirectResponse
     {
+        $currentUser = auth()->user();
+        if ($currentUser->id == $admin->id) {
+            return redirect()
+                ->route('admins.index')
+                ->with('error', 'Вы не можете удалить сами себя');
+        }
+
         $admin->delete();
 
         return redirect()
