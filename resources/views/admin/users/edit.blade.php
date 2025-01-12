@@ -38,9 +38,9 @@
         <div class="form-group">
             <label for="status">Статус</label>
             <select name="status" id="status" class="form-control @error('status') is-invalid @enderror">
-                <option value="active" {{ request('status') === 'active' ? 'selected' : '' }}>Активный</option>
+                <option value="active" {{ $admin->status->value == 'active' ? 'selected' : '' }}>Активный</option>
                 @if (auth()->user()->id !== $admin->id)
-                    <option value="inactive" {{ request('status') === 'inactive' ? 'selected' : '' }}>Неактивный
+                    <option value="inactive" {{$admin->status->value == 'inactive' ? 'selected' : '' }}>Неактивный
                     </option>
                 @else
                     <option value="inactive" disabled>Неактивный</option>
