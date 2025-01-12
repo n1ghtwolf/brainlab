@@ -26,6 +26,9 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     })->name('admin');
 
     Route::prefix('admins')->group(function () {
+        Route::prefix('laravel-filemanager')->group(function () {
+            \UniSharp\LaravelFilemanager\Lfm::routes();
+        });
         Route::get('/', [AdminController::class, 'index'])->name('admins.index');
         Route::get('/create', [AdminController::class, 'create'])->name('admins.create');
         Route::post('/', [AdminController::class, 'store'])->name('admins.store');

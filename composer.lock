@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d98054d6b45513555f542596ab654ae2",
+    "content-hash": "d2a920696014aae32d74bf18036c36d2",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1098,50 +1098,32 @@
             "time": "2023-12-03T19:50:20+00:00"
         },
         {
-            "name": "intervention/image",
-            "version": "2.7.2",
+            "name": "intervention/gif",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/Intervention/image.git",
-                "reference": "04be355f8d6734c826045d02a1079ad658322dad"
+                "url": "https://github.com/Intervention/gif.git",
+                "reference": "42c131a31b93c440ad49061b599fa218f06f93be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/04be355f8d6734c826045d02a1079ad658322dad",
-                "reference": "04be355f8d6734c826045d02a1079ad658322dad",
+                "url": "https://api.github.com/repos/Intervention/gif/zipball/42c131a31b93c440ad49061b599fa218f06f93be",
+                "reference": "42c131a31b93c440ad49061b599fa218f06f93be",
                 "shasum": ""
             },
             "require": {
-                "ext-fileinfo": "*",
-                "guzzlehttp/psr7": "~1.1 || ^2.0",
-                "php": ">=5.4.0"
+                "php": "^8.1"
             },
             "require-dev": {
-                "mockery/mockery": "~0.9.2",
-                "phpunit/phpunit": "^4.8 || ^5.7 || ^7.5.15"
-            },
-            "suggest": {
-                "ext-gd": "to use GD library based image processing.",
-                "ext-imagick": "to use Imagick based image processing.",
-                "intervention/imagecache": "Caching extension for the Intervention Image library"
+                "phpstan/phpstan": "^1",
+                "phpunit/phpunit": "^10.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "aliases": {
-                        "Image": "Intervention\\Image\\Facades\\Image"
-                    },
-                    "providers": [
-                        "Intervention\\Image\\ImageServiceProvider"
-                    ]
-                },
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "Intervention\\Image\\": "src/Intervention/Image"
+                    "Intervention\\Gif\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1155,19 +1137,174 @@
                     "homepage": "https://intervention.io/"
                 }
             ],
-            "description": "Image handling and manipulation library with support for Laravel integration",
-            "homepage": "http://image.intervention.io/",
+            "description": "Native PHP GIF Encoder/Decoder",
+            "homepage": "https://github.com/intervention/gif",
+            "keywords": [
+                "animation",
+                "gd",
+                "gif",
+                "image"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/gif/issues",
+                "source": "https://github.com/Intervention/gif/tree/4.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/interventionphp",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2024-09-20T13:35:02+00:00"
+        },
+        {
+            "name": "intervention/image",
+            "version": "3.10.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image.git",
+                "reference": "1c68e5fdf443374f3580c5b920a7f177eccdab85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/1c68e5fdf443374f3580c5b920a7f177eccdab85",
+                "reference": "1c68e5fdf443374f3580c5b920a7f177eccdab85",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "intervention/gif": "^4.2",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10.0 || ^11.0",
+                "slevomat/coding-standard": "~8.0",
+                "squizlabs/php_codesniffer": "^3.8"
+            },
+            "suggest": {
+                "ext-exif": "Recommended to be able to read EXIF data properly."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "PHP image manipulation",
+            "homepage": "https://image.intervention.io/",
             "keywords": [
                 "gd",
                 "image",
                 "imagick",
-                "laravel",
+                "resize",
                 "thumbnail",
                 "watermark"
             ],
             "support": {
                 "issues": "https://github.com/Intervention/image/issues",
-                "source": "https://github.com/Intervention/image/tree/2.7.2"
+                "source": "https://github.com/Intervention/image/tree/3.10.2"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/interventionio",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Intervention",
+                    "type": "github"
+                },
+                {
+                    "url": "https://ko-fi.com/interventionphp",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2025-01-04T07:31:37+00:00"
+        },
+        {
+            "name": "intervention/image-laravel",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Intervention/image-laravel.git",
+                "reference": "24738a017d42a6fa8d9adabdbd69a2c19c5b0d30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Intervention/image-laravel/zipball/24738a017d42a6fa8d9adabdbd69a2c19c5b0d30",
+                "reference": "24738a017d42a6fa8d9adabdbd69a2c19c5b0d30",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8|^9|^10|^11",
+                "intervention/image": "^3.7",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.18",
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Image": "Intervention\\Image\\Laravel\\Facades\\Image"
+                    },
+                    "providers": [
+                        "Intervention\\Image\\Laravel\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Intervention\\Image\\Laravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oliver Vogel",
+                    "email": "oliver@intervention.io",
+                    "homepage": "https://intervention.io/"
+                }
+            ],
+            "description": "Laravel Integration of Intervention Image",
+            "homepage": "https://image.intervention.io/",
+            "keywords": [
+                "gd",
+                "image",
+                "imagick",
+                "laravel",
+                "resize",
+                "thumbnail",
+                "watermark"
+            ],
+            "support": {
+                "issues": "https://github.com/Intervention/image-laravel/issues",
+                "source": "https://github.com/Intervention/image-laravel/tree/1.3.0"
             },
             "funding": [
                 {
@@ -1179,7 +1316,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-05-21T17:30:32+00:00"
+            "time": "2024-06-15T08:20:20+00:00"
         },
         {
             "name": "jeroennoten/laravel-adminlte",
@@ -5582,39 +5719,51 @@
         },
         {
             "name": "unisharp/laravel-filemanager",
-            "version": "v1.8.0",
+            "version": "v2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UniSharp/laravel-filemanager.git",
-                "reference": "63a788e5f62d3e9c8b8be8fd5bac9c9d59325e29"
+                "reference": "93c99703fa77f613adfcb2dc4a06c1b42b0bd372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/63a788e5f62d3e9c8b8be8fd5bac9c9d59325e29",
-                "reference": "63a788e5f62d3e9c8b8be8fd5bac9c9d59325e29",
+                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/93c99703fa77f613adfcb2dc4a06c1b42b0bd372",
+                "reference": "93c99703fa77f613adfcb2dc4a06c1b42b0bd372",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": ">=4.2.0",
-                "intervention/image": "2.*",
-                "php": ">=5.4.0"
+                "ext-exif": "*",
+                "ext-fileinfo": "*",
+                "illuminate/config": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "illuminate/container": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "illuminate/filesystem": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "illuminate/http": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "illuminate/support": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "intervention/image": ">=2.0.0",
+                "league/flysystem": ">=2.0.0",
+                "php": ">=7.2.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.0",
-                "phpspec/phpspec": "~2.1",
-                "phpunit/phpunit": "~4.8"
+                "mockery/mockery": "~1.3.0",
+                "phpunit/phpunit": "~8.0",
+                "squizlabs/php_codesniffer": "^3.1"
             },
             "suggest": {
                 "ext-gd": "to use GD library based image processing.",
                 "ext-imagick": "to use Imagick based image processing."
             },
-            "bin": [
-                "bin/debug"
-            ],
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": [],
+                    "providers": [
+                        "UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
-                    "Unisharp\\Laravelfilemanager\\": "src/"
+                    "UniSharp\\LaravelFilemanager\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -5628,10 +5777,10 @@
                 },
                 {
                     "name": "UniSharp Ltd.",
-                    "email": "unisharp-service@unisharp.com"
+                    "email": "opensource@unisharp.com"
                 }
             ],
-            "description": "A file upload/editor intended for use with Laravel 5 and CKEditor / TinyMCE",
+            "description": "A file upload/editor intended for use with Laravel 5 to 10 and CKEditor / TinyMCE",
             "keywords": [
                 "CKEditor",
                 "file",
@@ -5644,9 +5793,9 @@
             ],
             "support": {
                 "issues": "https://github.com/UniSharp/laravel-filemanager/issues",
-                "source": "https://github.com/UniSharp/laravel-filemanager/tree/master"
+                "source": "https://github.com/UniSharp/laravel-filemanager/tree/v2.9.1"
             },
-            "time": "2017-06-11T15:15:20+00:00"
+            "time": "2024-08-09T17:57:27+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -8380,12 +8529,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
 }

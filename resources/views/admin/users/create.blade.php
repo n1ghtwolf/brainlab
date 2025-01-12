@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <form action="{{ route('admins.store') }}" method="POST">
+    <form action="{{ route('admins.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="name">Имя</label>
@@ -43,7 +43,23 @@
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
+        <div class="input-group">
+           <span class="input-group-btn">
+             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
+               <i class="fa fa-picture-o"></i> Choose
+             </a>
+           </span>
+            <input id="thumbnail" class="form-control" type="text" name="filepath">
+        </div>
+        <div id="holder" style="margin-top:15px;max-height:100px;"></div>
         <button type="submit" class="btn btn-success">Создать</button>
         <a href="{{ route('admins.index') }}" class="btn btn-secondary ml-2">Отмена</a>
     </form>
+@endsection
+
+@section('js')
+    <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+    <script>
+        var route_prefix = "laravel-filemanager";
+        $('#lfm').filemanager('image', {prefix: route_prefix});    </script>
 @endsection
