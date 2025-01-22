@@ -42,7 +42,14 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-        'status' => StatusEnum::class
+        'password'          => 'hashed',
+        'status'            => StatusEnum::class
     ];
+
+    public function setPasswordAttribute($password): void
+    {
+        if (!empty($password)) {
+            $this->attributes['password'] = bcrypt($password);
+        }
+    }
 }
